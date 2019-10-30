@@ -8,6 +8,8 @@ Go to the main folder and run the below command
 
 mvn spring-boot:run
 
+mvn clean install
+
 
 Access URL:
 http://localhost:8080/sudoku/board
