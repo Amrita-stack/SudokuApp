@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+  <div style="text-align:center">
+    <h1>
+     Welcome to {{ title }}!
+    </h1>
+  </div>
+ <ng4-loading-spinner> </ng4-loading-spinner>
+ <div>
+   <table class="board">
+      <tr class="field" *ngFor="let item of data| slice:0:9; let i=index">
+          <td (click)="onClick(0, i, item, $event)">{{item}}</td>
+      </tr>
+      <tr class="field" *ngFor="let item of data| slice:9:18; let i=index">
+          <td (click)="onClick(1, i, item, $event)">{{item}}</td>
+      </tr>
+      <tr class="field" *ngFor="let item of data| slice:18:27; let i=index">
+          <td (click)="onClick(2, i, item, $event)">{{item}}</td>
+      </tr>
+      <tr class="field" *ngFor="let item of data| slice:27:36; let i=index">
+          <td (click)="onClick(3, i, item, $event)">{{item}}</td>
+      </tr>
+      <tr class="field" *ngFor="let item of data| slice:36:45; let i=index">
+          <td (click)="onClick(4, i, item, $event)">{{item}}</td>
+      </tr>
+      <tr class="field" *ngFor="let item of data| slice:45:54; let i=index">
+          <td (click)="onClick(5, i, item, $event)">{{item}}</td>
+      </tr>
+      <tr class="field" *ngFor="let item of data| slice:54:63; let i=index">
+          <td (click)="onClick(6, i, item, $event)">{{item}}</td>
+      </tr>
+      <tr class="field" *ngFor="let item of data| slice:63:72; let i=index">
+          <td (click)="onClick(7, i, item, $event)">{{item}}</td>
+      </tr>
+      <tr class="field" *ngFor="let item of data| slice:72:81; let i=index">
+          <td (click)="onClick(8, i, item, $event)">{{item}}</td>
+      </tr>
+   </table>
+ </div>
+ <div style="text-align:center"><button (click)="ReloadSudoku()">Reload</button></div>
