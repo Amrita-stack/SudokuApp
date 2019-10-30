@@ -10,5 +10,5 @@ mvn spring-boot:run
 
 
 Access URL:
-http://localhost:8080//sudoku/board
+http://localhost:8080/sudoku/board
 
