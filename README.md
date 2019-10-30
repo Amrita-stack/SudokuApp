@@ -8,7 +8,7 @@ Go to the main folder and run the below command
 
 mvn spring-boot:run
 
-mvn clean install
+To test the application: mvn test
 
 
 Access URL:
