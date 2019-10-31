@@ -1,29 +1,62 @@
-# RandomSudoku
+# SudokuApp
 
-This program returns a solved sudoku puzzle everything we invoke the rest endpoint
+This program returns a solved sudoku puzzle everytime we invoke the rest endpoint.
+In addition, there is an option to Reload the Sudoku solution by pressing the 'Reload' button.
 
 # Instructions to run the code
 
->>Go to the main folder and run the below command
+The following are the pre-requisites for building and running the code
 
+Download and install Java
+https://www.java.com/en/download/
+
+Maven set up
+https://maven.apache.org/install.html
+
+Git set up
+https://git-scm.com/downloads
+
+npm set up
+https://www.npmjs.com/get-npm
+
+# Instructions to build and run the java app
+
+Once you download the source code from github, go inside randomsudoku folder and run the following command:
+```
+mvn clean install
+
+```
+This command will also run the built-in tests. You can also run the tests alone by executing the command:
+
+```
+mvn test
+
+```
+Once the build is successful, execute the below command to run the java application:
+```
 mvn spring-boot:run
 
-Access URL:
-http://localhost:8080/sudoku/board
+```
+The application will be accessible at:
 
+```
+localhost:8080:/sudoku/board
 
-To test the application: mvn test
+```
+# Instructions to build and run the ui client
+The UI client is an angular based app. The main code is present inside the sudokuclient folder.
+To run the UI Client run the below command from inside sudokuclient folder
 
-
-
-
->>To run the UI Client run the below command at the main folder
-
+```
 ng serve
 
-The UI is running at :
+```
+It is also possible to create the distribution using the npm command:
+```
+ng build --prod
+```
 
-http://localhost:4200
+The UI will be running at : http://localhost:4200
 
 The nginx configuration file is added to the project
 
