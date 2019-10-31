@@ -1,6 +1,7 @@
 # SudokuApp
 
 This program returns a solved sudoku puzzle everytime we invoke the rest endpoint.
+
 In addition, there is an option to Reload the Sudoku solution by pressing the 'Reload' button.
 
 # Instructions to run the code
@@ -18,6 +19,12 @@ https://git-scm.com/downloads
 
 npm set up
 https://www.npmjs.com/get-npm
+
+nginx set up
+https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
+
+Docker set up
+https://docs.docker.com/docker-for-windows/install/
 
 # Instructions to build and run the java app
 
@@ -45,6 +52,7 @@ localhost:8080:/sudoku/board
 ```
 # Instructions to build and run the ui client
 The UI client is an angular based app. The main code is present inside the sudokuclient folder.
+
 To run the UI Client run the below command from inside sudokuclient folder
 
 ```
@@ -58,15 +66,34 @@ ng build --prod
 
 The UI will be running at : http://localhost:4200
 
-The nginx configuration file is added to the project
+# nginx configuration
+The nginx configuration file is added to the project. Basically the configuration has been modified by setting the property:
 
+```
+proxy_pass http://localhost:4200/;
 
->> To create docker image:-
+```
+The proxy_pass is now pointing to the URL on which the UI is loading. This configuration can be modified as required.
+You can also specify the property:
+```
+server_name  localhost;
 
-At the randomsudoku webservice location , run the below command:
+```
+This property will eventually be the URL which we will hit to get the UI loaded.
 
->docker build -f Dockerfile -t sudoku-ws:level-4 .
+# Docker Images
+The docker file is present inside the randomsudoku folder and we can run the following command:
 
+```
+docker build -f Dockerfile -t sudoku-ws:level-4 .
+
+```
+You can see the created docker image by using the below command:
+
+```
+docker build -f Dockerfile -t sudoku-ws:level-4 .
+
+```
 To run:
 
 >docker run –p 8080:8080 sudoku-ws:level-4
