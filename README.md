@@ -81,7 +81,7 @@ server_name  localhost;
 ```
 This property will eventually be the URL which we will hit to get the UI loaded.
 
-# Docker Images
+# Docker Image (Instructions to build and run)
 The docker file is present inside the randomsudoku folder and we can run the following command:
 
 ```
@@ -91,16 +91,18 @@ docker build -f Dockerfile -t sudoku-ws:level-4 .
 You can see the created docker image by using the below command:
 
 ```
-docker build -f Dockerfile -t sudoku-ws:level-4 .
+docker image ls
 
 ```
-To run:
+To run the image, use the below command:
+```
+docker run –p 8080:8080 sudoku-ws:level-4
 
->docker run –p 8080:8080 sudoku-ws:level-4
+```
 
 Note:- I have used docker tool-box , the comunity version on windows, docker does not map the localhost, it uses the default IP
 
-> curl http://192.168.99.100:8080/sudoku/board
+curl http://192.168.99.100:8080/sudoku/board
 
 
 
